@@ -7,13 +7,13 @@ app.use(express.json());
 app.use(cors());
 
 var conexion = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "dbRestaurante",
-  });
+  host: "localhost",
+  user: "root",
+  password: "miguelangel",
+  database: "dbRestaurante",
+});
 
-  conexion.connect(function (error) {
+conexion.connect(function (error) {
     if (error) {
       throw error;
     } else {

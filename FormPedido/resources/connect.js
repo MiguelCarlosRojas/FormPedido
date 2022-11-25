@@ -7,27 +7,27 @@ app.use(express.json());
 app.use(cors());
 
 var conexion = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "miguelangel",
-  database: "dbRestaurante",
-});
+    host: "localhost",
+    user: "root",
+    password: "miguelangel",
+    database: "dbRestaurante",
+  });
 
-conexion.connect(function (error) {
-  if (error) {
-    throw error;
-  } else {
-    console.log("Conexión exitosa");
-  }
-});
+  conexion.connect(function (error) {
+    if (error) {
+      throw error;
+    } else {
+      console.log("Conexión exitosa");
+    }
+  });
 
-const puerto = process.env.PUERTO || 3000;
+  const puerto = process.env.PUERTO || 3000;
 
-app.listen(puerto, function () {
-  console.log("Servidor funcionando en puerto: " + puerto);
-});
+  app.listen(puerto, function () {
+    console.log("Servidor funcionando en puerto: " + puerto);
+  });
 
-app.post("/api/pedido", (req, res) => {
+  app.post("/api/pedido", (req, res) => {
 	let data = {
     	userped: req.body.USERPED,
     	emausped: req.body.EMAUSPED,
